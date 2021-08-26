@@ -1,0 +1,274 @@
+%-------------------------
+% Resume in Latex
+% Author : Naeem
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    {\Huge \scshape Naeem Patel} \\ \vspace{1pt}
+     Mumbai \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ +91-916-713-9763 ~ \href{mailto:x@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{naeempatel010@gmail.com}} ~ 
+    \href{https://www.linkedin.com/in/naeem-010/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/naeem-010}}  ~
+    \href{https://github.com/Naeempatel010}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/Naeempatel010}}
+    \vspace{-8pt}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {DAV Public School, Nerul}{June 2014 -- June 2016}
+      {Senior Secondary Education. Awarded gold medal in Computer Science}{Percentage - 94.8\%}
+
+    \resumeSubheading
+      {Fr. C Rodrigues Institute of Technology, Mumbai}{Aug. 2016 -- May 2020}
+      {Bachelor of Engineering in Computer Science}{GPA - 9.26/10}
+
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Tata Consultancy Services}{Aug 2020 -- Present}
+      {System Engineer}{Mumbai, India}
+      \resumeItemListStart
+        \resumeItem{Worked as part of the foundation team which providing lower layer services like data virtualization, Email Delivery Service, workflow management, SAML authentication, user management and notification utility.}
+        \resumeItem{Developed the Task manager microservice which is responsible for handling, creating and execution a defined set of intelligent tasks}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Tata Institute of Fundamental Research}{May 2019 -- May 2020}
+      {Project Intern}{Mumbai, India}
+      \resumeItemListStart
+        \resumeItem{Designed a custom YOLO architecture for detecting objects like ships and person as part of the surveillance system using C++, Qt and OpenCV library. }
+        \resumeItem{Purpose of the system is to allow any person with no technical knowledge can create complex deep learning models. The system consists of annotation tool, Dataset splitting, Training using Darknet project and testing.}
+    \resumeItemListEnd
+    
+    \resumeSubheading
+      {Myraa Technologies}{May 2018 -- May 2019}
+      {M-Visionary Researcher}{Mumbai, India}
+      \resumeItemListStart
+        \resumeItem{Created an automated question generation from images/text for the Quiz application in the entertainment domain. Worked on the question generation from text using Stanford’s CoreNLP Dependency parsers to extract Subject-verb-object. }
+        \resumeItem{Developed the web application to exhibit the final end-to-end system wherein we input an image, convert it into a caption, feed it into the question generation model and then finally create similar looking option using  GloVe.}
+        \resumeItem{\textbf{Awarded 1st Rank in the FCRIT Incubation Center}}
+     \resumeItemListEnd
+   \resumeSubheading
+      {Cisco ThinQbator}{June 2020 -- July 2020}
+      {Intern}{Mumbai, India}
+      \resumeItemListStart
+        \resumeItem{Developed a face recognition system for criminal tracking from CCTV footages. It is based on the Face Net architecture and incorporates super resolution for improving the image quality and MTCNN for face detection.}
+        \resumeItem{\textbf{Awarded the Most Feasible solution award amongst more than 25 Teams}}
+     \resumeItemListEnd
+    
+\resumeItemListEnd
+    
+\vspace{-16pt}
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Facial Emotion Detector } $|$ \emph{Python}}{July 2018}
+          \resumeItemListStart
+            \resumeItem{Developed an application which can detect any of the seven emotions (happy, sad, surprised, neutral, disgust, fear, angry) in real-time by using Haar cascade for face detection and a deep learning-based CNN model for emotion Detection.}
+            \resumeItem{Awarded the 1st prize in CSI Summer Project Competition 2018}
+           \resumeItemListEnd
+          \vspace{-13pt}
+      \resumeProjectHeading
+          {\textbf{Poncho – conversational Chatbot } $|$ \emph{Python, Tensorflow, Web Technologies}}{May 2019}
+          \resumeItemListStart
+            \resumeItem{    Created a virtual general conversational chatbot using Google’s neural machine translation which is an open source ecosystem for sequence learning. }
+            \resumeItem{Utilized reddit data as training data and could reply similar to a human to normal conversation. }
+        \resumeItemListEnd 
+          \vspace{-13pt}
+          \resumeProjectHeading
+          {\textbf{Car Damage Detection using Mask R-CNN} $|$ \emph{Android Studio, Python, Web Technologies}}{March 2019}
+          \resumeItemListStart
+            \resumeItem{Created a mobile application which can automatically detect damages in vehicle and semantically segment every minute crack. It uses Mask R-CNN which is a deep learning-based technique for semantic segmentation.}
+            \resumeItem{Was selected as the winner of the Smart India Hackathon (SIH) 2019 organized by HRD ministry of India and was amongst more than 1,00,000 participants in 28 centers in the process were awarded a  cash prize of 100,000 INR by Ericsson.}
+          \resumeItemListEnd
+          \vspace{15pt}
+          \resumeProjectHeading
+          {\textbf{WorkX – Platform for ideation, investment, creation and job seeking} $|$ \emph{Laravel}}{October 2020}
+          \resumeItemListStart
+            \resumeItem{Developed a platform for rural employment, wherein we proposed a mechanism to identify micro-opportunities that can continue to generate temporary, cyclical employment in the rural sector, run a feasibility and demand analysis, and then find investors who can manage those modest funds to support such initiatives.}
+            \resumeItem{Selected as the top 5 solutions from across the country for final round of Manipal Hackathon held in Karnataka wherein more than 400 solutions were submitted.}
+          \resumeItemListEnd
+          \vspace{-13pt}
+          \resumeProjectHeading
+          {\textbf{JoJoTorrent - Peer-to-peer video streaming using Torrent} $|$ \emph{NodeJS}}{Dec 2018}
+          \resumeItemListStart
+            \resumeItem{Developed a peer-to-peer video streaming implementing the torrent protocol in order to stream large videos without any buffering.}
+            \resumeItem{There is no reliance on a central server providing the data without centralized servers relying on a network entirely of people's browsers.}
+            \resumeItem{Was selected amongst the top 25 projects at Mumbai Hackathon held in Xavier Institute of Technology, 2018 amongst more than 100 teams.}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+\vspace{-15pt}
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{:  C, C++, Java, Python, JavaScript, SQL} \\
+     \textbf{Developer Tools}{: Eclipse, Azure Cloud, } \\
+     \textbf{Technologies/Frameworks}{: Spring, NodeJS, ReactJS, TensorFlow, OpenCV library, GraphQL} \\
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+
+%-----------INVOLVEMENT---------------
+\section{Extracurricular}
+\begin{itemize}
+    \item Helped start the first AI and DL Club (FCRIT-AID) in my college in association with Benitt University and was elected the co-chairman for my efforts during the 2018-2019. As co-chairman, I helped organize numerous seminars and workshop on topics ranging from RPA, Data science, Deep learning, big data.  
+
+    \item Won the 1st prize in the IEEE Technical presentation award 2019 held by the FCRIT IEEE chapter for the paper - "Questionator.ai - automated question generation". 
+
+    \item Was one of the top 5 teams winning at the Internal Smart India hackathon 2020 held in the college for the project titled - “capture face, expression, gesture of Targeted persons through distributed CCTV”. 
+
+    \item Part of the Seva Sahyog Foundation wherein I partnered with a local teacher providing tutoring to underprivileged children in Mathematics and Science. 
+
+    \item Part of the Computer society of India (CSI) where I took part in numerous workshops and competitions that were organized. 
+    
+\end{itemize}
+
+
+\section{Papers}
+\begin{itemize}
+    \item S Patel., N. Patel, S Deshpande, A. Siddhique Ship Intrusion Detection using Custom Object Detection System with YOLO Algorithm. International Research Journal of Engineering \& Technology. 2021; Volume 8 Issue 1 
+
+    \item Patel N., Shinde S., Poly F. (2020) Automated Damage Detection in Operational Vehicles Using Mask R-CNN. In: Vasudevan H., Michalas A., Shekokar N., Narvekar M. (eds) Advanced Computing Technologies and Applications. Algorithms for Intelligent Systems. Springer, Singapore. 
+
+    \item A. Srivastava, S. Shinde, N. Patel, S. Despande, A. Dalvi and S. Tripathi, "Questionator-Automated Question Generation using Deep Learning," 2020 International Conference on Emerging Trends in Information Technology and Engineering (ic-ETITE), 2020, pp. 1-5 
+
+    \item N. Patel, Y. Singh, S. Reddy, “FaceCognize : An approach to Face Recognition for low resolution images” 2021 Asian Conference on Innovation in Technology, Pune (Manuscript accepted for publication in ASIANCON 2021, Pune) 
+
+ 
+\end{itemize}
+\end{document}
