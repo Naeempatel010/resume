@@ -15,6 +15,8 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
+\usepackage{multicol}                       % Multiple columns
+
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
@@ -41,6 +43,12 @@
 
 \usepackage[autostyle,english=american]{csquotes}
 \MakeOuterQuote{"}
+
+\newcommand{\sidebyside}[2]{
+    \begin{multicols}{2}
+    #1 \columnbreak
+    #2 \end{multicols}
+}
 
 
 \pagestyle{fancy}
@@ -80,14 +88,15 @@
 \setlength{\tabcolsep}{0in}
 % Sections formatting
 
-%\titleformat{\section}{
-%  \vspace{-4pt}\scshape\raggedright\large\color{color-title}
-%}{}{0em}{}[\color{color-title}\titlerule \vspace{-5pt}]
 
 \titleformat{\section}{
-   \vspace{-4pt} \scshape\raggedright\Large
-    }{}{0em}{}[\titlerule
-    \vspace{-5pt}]
+    \scshape\raggedright\Large}{}{0em}{}[\titlerule
+    \vspace{-\smallskipamount}]
+
+%\titleformat{\section}{
+%   \vspace{-4pt} \scshape\raggedright\Large
+%    }{}{0em}{}[\titlerule
+%    \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -128,6 +137,19 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+% List items
+\newcommand{\entry}[1]{\item\small{#1}}
+\newcommand{\entryextra}[1]{\textcolor{color-detail}{\entry{#1}}}
+\newcommand{\entrylabeled}[2][]{\item[#1]\small{#2}}
+
+\newcommand{\entrymid}[4][]{
+    \item[#1] \small{#2} \hfill \small{#3}
+    \vspace{-\smallskipamount} \item[]\small{\textit{#4}}}
+
+\newcommand{\entrybig}[5][]{\item[#1]
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    #2 & #3 \\ {\small#4} & {\small #5} \\ \end{tabular*}}
+
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
 \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
@@ -137,6 +159,17 @@
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% Lists
+\newcommand{\outerlist}[1]{
+    \begin{itemize}[leftmargin=*] #1 \end{itemize}}
+\newcommand{\denseouterlist}[1]{
+    \begin{itemize}[leftmargin=*,itemsep=0pt] #1 \end{itemize}}
+\newcommand{\innerlist}[1]{
+    \begin{itemize}[topsep=0pt] #1 \end{itemize}}
+\newcommand{\orderedouterlist}[1]{
+    \begin{enumerate}[leftmargin=*] #1 \end{enumerate}}
+
 
 
 %-------------------------------------------
@@ -174,6 +207,7 @@
 
 
 %-----------EXPERIENCE-----------
+\vspace{-0.8cm}
 \section{Experience}
   \resumeSubHeadingListStart
 
@@ -193,6 +227,7 @@
       \resumeItemListStart
         \resumeItem{Designed a custom YOLO architecture for detecting objects like ships and person as part of the surveillance system using C++, Qt and OpenCV library.}
         \resumeItem{Programmed the system to aid any person with no technical knowledge create complex deep learning models. Implemented annotation tool, Dataset splitting, Training using Darknet project and testing.}
+        \resumeItem{Capable of detecting ships approaching the shore and notify the concerned authorities.}
     \resumeItemListEnd
     
     \resumeSubheading
@@ -217,6 +252,7 @@
 \vspace{-10pt}
 
 %-----------PROJECTS-----------
+\vspace{-0.4cm}
 \section{Projects}
     \resumeSubHeadingListStart
     \resumeProjectHeading
@@ -256,34 +292,40 @@
               \resumeItemListEnd
     \resumeSubHeadingListEnd
 
-%-----------PROGRAMMING SKILLS-----------
+\begin{multicols}{2}
 \section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{:  C, C++, Java, Python, JavaScript, SQL} \\
-     \textbf{Developer Tools}{: Eclipse, Azure Cloud} \\
-     \textbf{Technologies/Frameworks}{: Spring, NodeJS, ReactJS, TensorFlow, OpenCV library, GraphQL} \\
-    }}
- \end{itemize}
- \vspace{-16pt}
+\denseouterlist{
+\entry{\textbf{Languages: }C, C++, Java, Python, JavaScript, SQL}
+\entry{\textbf{Developer Tools: }Eclipse, Azure Cloud}
+\entry{\textbf{Technologies/Frameworks: }Spring, NodeJS, ReactJS, TensorFlow, OpenCV library, GraphQL, Qt Library}
+}
+\columnbreak
+\section{Research Interests}
+
+\denseouterlist{
+\entry{Computer Vision}
+\entry{Deep Learning}
+\entry{Distributed Computing}
+}    
+\end{multicols}
+ 
 
 
 \section{Publications}
  \begin{itemize}
 \small{ 
-\item Patel N., Shinde S., Poly F., "Automated Damage Detection in Operational Vehicles Using Mask R-CNN". \textit{Advanced Computing Technologies and Applications. Algorithms for Intelligent Systems. Springer, Singapore 2020, } pp. 563-571 
-\item A. Srivastava, S. Shinde, N. Patel, S. Despande, A. Dalvi and S. Tripathi, ”Questionator-Automated Question Generation using Deep Learning,” \textit{2020 International Conference on Emerging Trends in Information Technology and Engineering (ic-ETITE), 2020},  pp. 1-5
-\item N. Patel, Y. Singh, S. Reddy, “FaceCognize : An approach to Face Recognition for low resolution images” \textit{2021 Asian Conference on Innovation in Technology, Pune(\textbf{Accepted and presented})}
-\item S Patel., N. Patel, S Deshpande, A. Siddhique Ship Intrusion Detection using Custom Object Detection System with YOLO Algorithm. \textit{International Research Journal of Engineering \& Technology. 2021, Volume 8 Issue 1}  
+\item \textbf{Patel N.}, Shinde S., Poly F., "Automated Damage Detection in Operational Vehicles Using Mask R-CNN". \textit{International Conference on Advance Computing Technologies and Applications. Algorithms for Intelligent Systems. Springer, Singapore 2020, } pp. 563-571 
+\item A. Srivastava, S. Shinde, \textbf{N. Patel}, S. Despande, A. Dalvi and S. Tripathi, ”Questionator-Automated Question Generation using Deep Learning,” \textit{2020 International Conference on Emerging Trends in Information Technology and Engineering (ic-ETITE), 2020},  pp. 1-5
+\item \textbf{N. Patel}, Y. Singh, S. Reddy, “FaceCognize : An approach to Face Recognition for low resolution images” \textit{2021 Asian Conference on Innovation in Technology, Pune(\textbf{Accepted and presented})}
+\item S Patel., \textbf{N. Patel}, S Deshpande, A. Siddhique Ship Intrusion Detection using Custom Object Detection System with YOLO Algorithm. \textit{International Research Journal of Engineering \& Technology. 2021, Volume 8 Issue 1}  
 }
 
 \end{itemize}
 
- 
- 
 
 
 %-----------INVOLVEMENT---------------
+
 \section{Extracurricular}
 \begin{itemize}
 \small{
