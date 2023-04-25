@@ -1,55 +1,22 @@
-%-------------------------
-% Resume in Latex
-% Author : Naeem
-% Based off of: https://github.com/sb2nov/resume
+%------------------------
+% Resume Template
+% Author : Naeem Patel
+% Github : https://github.com/xprilion
 % License : MIT
 %------------------------
 
-
-\documentclass[letterpaper,11pt]{article}
+\documentclass[a4paper,20pt]{article}
 
 \usepackage{latexsym}
+\usepackage{fontawesome}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage{multicol}                       % Multiple columns
-
-\usepackage[hidelinks]{hyperref}
+\usepackage[pdftex]{hyperref}
 \usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{fontawesome5}
-\usepackage{multicol}
-\setlength{\multicolsep}{-3.0pt}
-\setlength{\columnsep}{-1pt}
-\input{glyphtounicode}
-\usepackage{lastpage}                       % Page numbering
-\usepackage{fancyhdr}                       % Footers
-\usepackage[usenames,dvipsnames]{xcolor}    % Coloring
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
-\usepackage[autostyle,english=american]{csquotes}
-\MakeOuterQuote{"}
-
-\newcommand{\sidebyside}[2]{
-    \begin{multicols}{2}
-    #1 \columnbreak
-    #2 \end{multicols}
-}
-
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -57,291 +24,186 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-%Footer
-\fancyfoot[C]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
-
-%Text Color
-
-\def\theme{MidnightBlue}
-\definecolor{color-text}{gray}{0.10}    % light black
-\definecolor{color-detail}{gray}{0.40}  % dark gray
-\colorlet{color-title}{\theme}          % black
-
-% Set text color
-\makeatletter
-\newcommand{\globalcolor}[1]{\color{#1}\global\let\default@color\current@color}
-\makeatother
-\AtBeginDocument{\globalcolor{color-text}}
-
-
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.6in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.19in}
-\addtolength{\topmargin}{-.7in}
-\addtolength{\textheight}{1.4in}
+\addtolength{\oddsidemargin}{-0.530in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1in}
 
-\urlstyle{same}
+\urlstyle{rm}
 
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
+
 % Sections formatting
-
-
 \titleformat{\section}{
-    \scshape\raggedright\Large}{}{0em}{}[\titlerule
-    \vspace{-\smallskipamount}]
-
-%\titleformat{\section}{
-%   \vspace{-4pt} \scshape\raggedright\Large
-%    }{}{0em}{}[\titlerule
-%    \vspace{-5pt}]
-
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[1]{
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumePoint}[1]{
   \item\small{
     {#1 \vspace{-2pt}}
   }
 }
-
-\newcommand{\classesList}[4]{
-    \item\small{
-        {#1 #2 #3 #4 \vspace{-2pt}}
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {\vspace{-2pt}}
   }
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \textbf{\small #2} \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
+  \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+      \textbf{#1} & \textbf{#2} \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & \textbf{\small #2}\\
-    \end{tabular*}\vspace{-7pt}
-}
 
-% List items
-\newcommand{\entry}[1]{\item\small{#1}}
-\newcommand{\entryextra}[1]{\textcolor{color-detail}{\entry{#1}}}
-\newcommand{\entrylabeled}[2][]{\item[#1]\small{#2}}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
 
-\newcommand{\entrymid}[4][]{
-    \item[#1] \small{#2} \hfill \small{#3}
-    \vspace{-\smallskipamount} \item[]\small{\textit{#4}}}
+\renewcommand{\labelitemii}{$\circ$}
 
-\newcommand{\entrybig}[5][]{\item[#1]
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-    #2 & #3 \\ {\small#4} & {\small #5} \\ \end{tabular*}}
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-% Lists
-\newcommand{\outerlist}[1]{
-    \begin{itemize}[leftmargin=*] #1 \end{itemize}}
-\newcommand{\denseouterlist}[1]{
-    \begin{itemize}[leftmargin=*,itemsep=0pt] #1 \end{itemize}}
-\newcommand{\innerlist}[1]{
-    \begin{itemize}[topsep=0pt] #1 \end{itemize}}
-\newcommand{\orderedouterlist}[1]{
-    \begin{enumerate}[leftmargin=*] #1 \end{enumerate}}
-
-
-
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------------------------
+%%%%%%  CV STARTS HERE  %%%%%%
 
 \begin{document}
 
-%----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
+%----------HEADING-----------------
+%\begin{tabular*}
+%{\textwidth}{l@{\extracolsep{\fill}}r}
+%  \textbf{{\LARGE Naeem Patel}} & Email: \href{mailto:}{nvj3yg@virginia.edu}\\
+% \href{https://naeem.com}{Portfolio: naeem.com} & Mobile:~~~+91-XXX-XXXX-XXX \\
+% \href{https://github.com/xprilion}{Github: ~~github.com/xprilion} \\
+%\end{tabular*}
 
 \begin{center}
-    {\Huge \scshape  Naeem Patel} \\ \vspace{1pt}
-     Navi Mumbai \\ \vspace{1pt}
-    \normalsize \raisebox{-0.1\height}\faPhone\ +91-9167139763 ~ \href{https://www.linkedin.com/in/naeem-010/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/naeem-010}}  ~
-    \href{https://github.com/Naeempatel010}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/Naeempatel010}}
-    \vspace{-8pt}
+{\Huge \scshape  Naeem Patel} \\
+\normalsize \raisebox{-0.1\height}\faPhone\ (434)-328-9667 ~
+\href{https://www.linkedin.com/in/naeem-010/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/naeem-010}}  ~
+\href{https://github.com/Naeempatel010}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/Naeempatel010}} ~
+\href{xx}{\raisebox{-0.2\height}\faEnvelope \underline{ nvj3yg@virginia.edu}} ~
+    
+    
 \end{center}
-
-
-%-----------EDUCATION-----------
+%-----------EDUCATION-----------------
 \section{Education}
   \resumeSubHeadingListStart
-    
     \resumeSubheading
-      {Fr. Conceicao Rodrigues Institute of Technology, Mumbai}{May 2020}
-      {Secured a Bachelor of Computer Engineering with CGPA \textbf{9.26/10} }{}
-    \resumeSubheading
-      {DAV Public School, Nerul}{June 2016}
-      {Secured  \textbf{94.8\%} in Higher Secondary Certificate Examination  \textbf{Gold Medal in Computer Science}}{}
-
-  \resumeSubHeadingListEnd
-
-
-%-----------EXPERIENCE-----------
-\vspace{-0.8cm}
-\section{Experience}
-  \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Tata Consultancy Services}{Aug 2020 -- Present}
-      {System Engineer}{Mumbai, India}
-      \resumeItemListStart
-        \resumeItem{Coordinating with the foundation team for data virtualization, SAML integration and on-premise file storage.}
-        \resumeItem{Developed a native intelligent workflow orchestration tool along a video streaming support using Spring Java.}
-        \resumeItem{Responsible for onboarding machine learning task like anomaly detection, clustering algorithms, market research and customer segmentation.}
-        \resumeItem{Creating ontologies for formal development of domain knowledge using interactive interface called wizard.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Tata Institute of Fundamental Research}{May 2019 -- May 2020}
-      {Project Intern}{Mumbai, India}
-      \resumeItemListStart
-        \resumeItem{Designed a custom YOLO architecture for detecting objects like ships and person as part of the surveillance system using C++, Qt and OpenCV library.}
-        \resumeItem{Programmed the system to aid any person with no technical knowledge create complex deep learning models. Implemented annotation tool, Dataset splitting, Training using Darknet project and testing.}
-        \resumeItem{Capable of detecting ships approaching the shore and notify the concerned authorities.}
-    \resumeItemListEnd
-    
-    \resumeSubheading
-      {Myraa Technologies}{May 2018 -- May 2019}
-      {M-Visionary Researcher}{Navi Mumbai, India}
-      \resumeItemListStart
-        \resumeItem{Created an automated question generation from images/text for the Quiz application in the entertainment domain using Stanford’s CoreNLP Dependency parsers to extract Subject-verb-object. }
-        \resumeItem{Developed a web application to exhibit the final end-to-end system using image as input, converted it into a caption, feed it into the question generation model to create questions and finally using unsupervised learning algorithm called gloVe to create similar looking options.}
-        \resumeItem{Awarded \textbf{1st Rank} in the \textbf{FCRIT Incubation Center.}}
-
-     \resumeItemListEnd
-   \resumeSubheading
-      {Cisco ThinQbator}{June 2020 -- July 2020}
-      {Intern}{Mumbai, India}
-      \resumeItemListStart
-        \resumeItem{Developed a face recognition system for criminal tracking from CCTV footages. It is based on the FaceNet architecture and incorporates super resolution for improving the image quality and MTCNN for face detection.}
-        \resumeItem{Demonstrated a robust prototype which is capable of recognizing images in low quality as well as requires very less re-training time for scaling the number of recognized faces.}
-        \resumeItem{Won the \textbf{Most Feasible solution} award amongst more than \textbf{25 Teams}.}
-     \resumeItemListEnd
-\resumeItemListEnd
-    
-\vspace{-10pt}
-
-%-----------PROJECTS-----------
-\vspace{-0.4cm}
-\section{Projects}
-    \resumeSubHeadingListStart
-    \resumeProjectHeading
-          {\textbf{Car Damage Detection using Mask R-CNN} $|$ \emph{Android Studio, Python, Web Technologies}}{March 2019}
-          \resumeItemListStart
-            \resumeItem{Devised a mobile application which can automatically detect damages in vehicle and semantically segment every minute crack using Mask R-CNN, a deep learning-based technique for semantic segmentation.}
-            \resumeItem{Won the \textbf{winner} of the \textbf{Smart India Hackathon (SIH)2019} organized by HRD ministry of India and was amongst more than \textbf{1,00,000 participants} in 28 centers in the process were awarded a cash prize of \textbf{100,000 INR} by Ericsson.}
-          \resumeItemListEnd
-          \vspace{-10pt}
-        \resumeProjectHeading
-          {\textbf{WorkX – Platform for ideation, investment, creation and job seeking} $|$ \emph{Laravel}}{October 2019}
-          \resumeItemListStart
-            \resumeItem{Developed a platform for rural employment, wherein we proposed a platform through which a user can suggest ideas for startups, pick up startup ideas, request funding for those ideas as well as find people to work at these startups}
-            \resumeItem{Selected as the \textbf{top 5} solutions from across the country for \textbf{final round of Manipal Hackathon} held in Karnataka wherein more than \textbf{400 solutions} were submitted.}
-          \resumeItemListEnd
-          \newpage
-          \resumeProjectHeading
-          {\textbf{Doctify - Personal medical Assistant} $|$ \emph{Laravel}}{April 2019}
-          \resumeItemListStart
-            \resumeItem{Developed a web application which can help in analyzing medical scans for brain haemorrhage, Pnemonia, Diabetes and Cancer}
-            \resumeItem{Utilized Deep learning techniques like Convolutional Neural Network(CNN) trained on the freely available medical datasets on Kaggle.}
-            \resumeItem{Selected as the \textbf{Top 25} project at the \textbf{Mumbai Hackathon 2019 amongst more than 200 entries}}
-          \resumeItemListEnd
-          \vspace{-12pt}
-      \resumeProjectHeading
-          {\textbf{Facial Emotion Detector } $|$ \emph{Python, OpenCV Library}}{July 2018}
-          \resumeItemListStart
-            \resumeItem{Developed an application to detect seven emotions (happy, sad, surprised, neutral, disgust, fear, angry) in real-time by using Haar cascade for face detection and a deep learning-based CNN model for emotion Detection.}
-            \resumeItem{Awarded the \textbf{1st prize} in \textbf{CSI Summer Project Competition 2018}}
-           \resumeItemListEnd
-           \vspace{-15pt}
-    \resumeProjectHeading
-          {\textbf{JoJoTorrent - Peer-to-peer video streaming using Torrent} $|$ \emph{NodeJS}}{Sep 2020}
-          \resumeItemListStart
-            \resumeItem{Developed a peer-to-peer video streaming implementing the torrent protocol in order to stream large videos without any buffering.}
-            \resumeItem{Enables streaming of videos over the browser using the WebRTC project eliminating the need to install plugins or download native apps.}
-              \resumeItemListEnd
+      {University of Virginia }{Charlottesville, VA}
+      {Master of Science - Computer Science }{2022 - 2024}
+      %{\scriptsize \textit{ \footnotesize{\newline{}\textbf{Courses:} Operating Systems, Data Structures, Analysis Of Algorithms, Artificial Intelligence, Machine Learning, Networking, Databases}}}
+      \resumeSubheading
+      {University of Mumbai}{Mumbai, India}
+      {Bachelors of Engineering - Computer Engineering; GPA - 3.84/4 }{2016-2020}
     \resumeSubHeadingListEnd
+	    
+\vspace{-5pt}
+\section{Skills Summary}
+	\resumeSubHeadingListStart
+	\resumeSubItem{Languages}{~~~~~~~~~~~~~~~~~~~~~~~~~~C, C++, Java, Python, JavaScript, SQL(PostgreSQL, Oracle)}
+	\resumeSubItem{Framework/Technologies}{~~~~Spring, Node.js, ReactJS, TensorFlow, Apache Kafka, GraphQL, JQuery, Hibernate, Flask}
+	\resumeSubItem{Tools}{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Microsoft Azure, Heroku, Docker}
+	
+\resumeSubHeadingListEnd
+\vspace{-5pt}
+\section{Work Experience}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+		{UVA Darden School of Business}{2022 - Present}
+		{Research Assistant - Dr. Rajkumar Venkatesan }{Charlottesville, Virginia}
+		\resumeItemListStart
+        \resumePoint{Automated data collection using Beautiful Soup and Selenium python libraries, resulting in a 15\% increase in efficiency.}
+        \resumePoint{Conducted text analysis on business data and documented insights related to emerging AI startup acquisitions.}
+        
+        \resumeItemListEnd
 
-\begin{multicols}{2}
-\section{Technical Skills}
-\denseouterlist{
-\entry{\textbf{Languages: }C, C++, Java, Python, JavaScript, SQL}
-\entry{\textbf{Developer Tools: }Eclipse, Azure Cloud}
-\entry{\textbf{Technologies/Frameworks: }Spring, NodeJS, ReactJS, TensorFlow, OpenCV library, GraphQL, Qt Library}
-}
-\columnbreak
-\section{Research Interests}
+    \resumeSubheading{Tata Consultancy Services}{2020 - 2022}
+    {System Engineer - Intelligent Services Network (ISN)}{Thane, India}
+    \resumeItemListStart
+        \resumePoint{Programmed GraphQL queries and APIs for data virtualization and code generation as part of an intelligent low-code application platform}
+          \resumePoint{Developed a workflow management microservice, increasing efficiency for other teams by 10\%-20\%}
+          \resumePoint{Integrated Apache Camel with various message brokers, including Confluent Kafka, RabbitMQ, ActiveMQ, and Azure Service Bus, leading to better throughput, fault tolerance, and log aggregation.}
+      \resumeItemListEnd
+    \resumeSubheading
+		{Tata Institute of Fundamental Research}{2019 - 2020}
+		{Research Fellow - Ship Intrusion Detection}{Mumbai, India}
+		\resumeItemListStart
+        \resumePoint{Designed a custom YOLO architecture for detecting objects of interest deployed as part of the surveillance system eliminating manual inspections.}
+        \resumePoint{Implemented a comprehensive software suite consisting of an annotation tool, dataset validator, and incorporating Darknet Library for training.}
+        \resumeItemListEnd
+\resumeSubHeadingListEnd
 
-\denseouterlist{
-\entry{Computer Vision}
-\entry{Deep Learning}
-\entry{Distributed Computing}
-}    
-\end{multicols}
- 
 
+%-----------PROJECTS-----------------
+\vspace{-5pt}
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeSubItem{Car Damage Detection using Mask R-CNN}{Devised a augmented reality-based mobile application which can automatically detect damages in vehicles and semantically segment every minute crack using Mask R-CNN, a deep learning-based technique for instance segmentation.}
+\vspace{2pt}
+\resumeSubItem{WorkX – Platform for ideation, investment, creation and job seeking}{Developed a web application for rural employment, wherein we proposed a platform through which a user can suggest ideas for startups, pick up startup ideas, request funding for those ideas as well as find people to work at these startups.}
+\vspace{2pt}
+\resumeSubItem{Doctify - Personal medical Assistant}{Developed a web application that can help in analyzing medical scans for brain hemorrhage, pneumonia, Diabetes, and Cancer.}
+\vspace{2pt}
+\resumeSubItem{DNS Spoofing Attack Simulation}{Created an automated Docker environment to simulate DNS-spoofing attacks which involved provisioning containers for the attacker, victim, and local DNS server, and utilizing ARP spoofing to poison the cache.}
+\vspace{6pt}
+\resumeSubHeadingListEnd
+\vspace{-5pt}
+%PUBLICATIONS
+
+\section{Honors and Awards}
+\begin{description}[font=$\bullet$]
+\item {Won the \textbf{1st prize} in the \textbf{IEEE Technical presentation award 2019} held by the \textbf{FCRIT IEEE chapter}.}
+\vspace{-5pt}
+\item {\textbf{Winner} of the \textbf{Smart India Hackathon (SIH) 2019} organized by HRD ministry of India.}
+\vspace{-5pt}
+\item {Qualified as \textbf{one} of the \textbf{5 teams} winning at the \textbf{Internal Smart India hackathon 2020}.}
+\vspace{-5pt}
+\item{\textbf{Top 5} teams at the Manipal Hackathon 2019}
+
+
+\end{description}
 
 \section{Publications}
- \begin{itemize}
-\small{ 
-\item \textbf{Patel N.}, Shinde S., Poly F., "Automated Damage Detection in Operational Vehicles Using Mask R-CNN". \textit{International Conference on Advance Computing Technologies and Applications. Algorithms for Intelligent Systems. Springer, Singapore 2020, } pp. 563-571 
-\item A. Srivastava, S. Shinde, \textbf{N. Patel}, S. Despande, A. Dalvi and S. Tripathi, ”Questionator-Automated Question Generation using Deep Learning,” \textit{2020 International Conference on Emerging Trends in Information Technology and Engineering (ic-ETITE), 2020},  pp. 1-5
-\item \textbf{N. Patel}, Y. Singh, S. Reddy, “FaceCognize : An approach to Face Recognition for low resolution images” \textit{2021 Asian Conference on Innovation in Technology, Pune(\textbf{Accepted and presented})}
-\item S Patel., \textbf{N. Patel}, S Deshpande, A. Siddhique Ship Intrusion Detection using Custom Object Detection System with YOLO Algorithm. \textit{International Research Journal of Engineering \& Technology. 2021, Volume 8 Issue 1}  
-}
-
-\end{itemize}
+\begin{description}[font=$\bullet$]
+\item \href{https://link.springer.com/chapter/10.1007/978-981-15-3242-9_54}{Automated Damage Detection in Operational Vehicles Using Mask R-CNN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\textbf{ICACTA 2020}}
+\vspace{-5pt}
+\item \href{https://ieeexplore.ieee.org/abstract/document/9077721}{Automated Question Generation using Deep Learning~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\textbf{ic-ETITE 2020}}
+\vspace{-5pt}
+\item \href{https://ieeexplore.ieee.org/document/9544851}{FaceCognize: An approach to Face Recognition for low resolution image~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\textbf{ASIANCON 2021}}
+\vspace{-5pt}
 
 
 
-%-----------INVOLVEMENT---------------
+\end{description}
+\vspace{2pt}
 
-\section{Extracurricular}
-\begin{itemize}
-\small{
-    \item Helped start the first ever \textbf{AI and DL Club (FCRIT-AID)} in association with Benitt University and was elected as \textbf{Chairman} during the 2018-2019. Organized numerous seminars and workshop on topics ranging from RPA, Data science, Deep learning, big data.  
+%-----------Awards-----------------
 
-    \item Won the \textbf{1st prize} in the \textbf{IEEE Technical presentation award 2019} held by the \textbf{FCRIT IEEE chapter} for the paper - "Questionator.ai - automated question generation". 
-
-    \item Qualified as \textbf{one} of the \textbf{5 teams} winning at the \textbf{Internal Smart India hackathon 2020} and selected to represent at SIH 2020 for the project titled - “capture face, expression, gesture of Targeted persons through distributed CCTV”. 
-
-    \item Partnered with local teachers to tutor underprivileged children in Mathematics and Science as part of Seva Sahyog Foundation in year.  
-
-    \item Part of the \textbf{Computer society of India (CSI)} where I took part in numerous workshops and competitions that were organized. 
-    
-}
-
-\end{itemize}
-
+\vspace{-5pt}
+\section{Volunteer Experience}
+  \resumeSubHeadingListStart
+	\resumeSubheading
+    {Teaching Assistant - CS 1010 - Introduction to Information Technology}{2022 - 2023}
+    {Grading, coding assignment and holding office hours under Prof. Derrick Stone}{Charlottesville, Virginia}
+\resumeSubheading
+    {Teaching Assistant - CS 3130 - Computer System and Organization}{2023 - Present}
+    {Conducting Labs, holding office hours and grading assignments under Prof. Charles Reiss}{Charlottesville, Virginia}
+\resumeSubHeadingListEnd
 
 \end{document}
